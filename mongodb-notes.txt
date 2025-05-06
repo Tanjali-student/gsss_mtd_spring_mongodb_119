@@ -1,0 +1,57 @@
+show dbs
+desc: shows the collection of databases available.
+
+
+use mongo_basics;
+
+
+db.createcollection("car_parking");
+desc: creates the new collection called car_parking.
+
+
+db.car_parking.insertOne(
+  
+  { customer_name:"mahira",
+    car_number:"KA-09-Mh-0896",
+    car_brand:"mahindra",
+
+})
+desc: inserting key-value pair.
+
+db.car_parking.find()
+desc: displays the key value pair.
+
+db.car_parkikng.insertMany([{
+customer_name:"nikita",
+car_number:"md-02-ms-0975",
+car_brand:"mahindra"
+},
+                           { 
+    customer_name:"sinchana",
+    car_number:"KA-09-Mh-0896",
+    car_brand:"mahindra"
+
+                           }])
+desc: inserting many key-value pair at once.
+
+
+db.car_parking.updateOne(
+  { customer_name:"mahira"},
+  {$set:{customer_name:"syeda mahira ayman"}}
+);
+desc: update helps to modify the key-value pair.
+
+db.car_parkikng.find({age:{$gt:20}}) 
+desc: gt=greater than,lt lesser than,gte and lte greater than or lesser than or equal to,eq=equal,ne=not equal comparison operators.
+
+db.car_parkikng.find({$and:[{age:{$gt:20}},{age:{$lt:60}}]})
+desc: using two comparison operators at once.
+
+
+db.car_parkikng.find({age:{$in:[20,22,60]}}) 
+desc: "in" checks for whether that key-value is obtained in collection. 
+
+
+
+
+
